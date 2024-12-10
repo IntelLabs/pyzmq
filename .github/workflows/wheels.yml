@@ -54,7 +54,7 @@ jobs:
           python setup.py cython
           python -m build --sdist .
 
-      - uses: actions/upload-artifact@v3
+      - uses: actions/upload-artifact@v
         with:
           name: sdist
           path: "dist/*.tar.gz"
@@ -169,7 +169,7 @@ jobs:
         run: |
           python -m cibuildwheel .
 
-      - uses: actions/upload-artifact@v3
+      - uses: actions/upload-artifact@v4.4.3
         with:
           name: wheels-${{ matrix.name }}
           path: "wheelhouse/*"
